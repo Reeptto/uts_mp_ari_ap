@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:uts_ari_aprianto/UTS/daftar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -168,7 +169,14 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text("Belum punya akun ?"),
                     TextButton(onPressed: 
-                    () {}, child: Text("Daftar Disini!", style: TextStyle(
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return DaftarPage();
+                        })
+                      );
+                    }, child: Text("Daftar Disini!", style: TextStyle(
                       color: Colors.blue
                     ),))
                   ],
