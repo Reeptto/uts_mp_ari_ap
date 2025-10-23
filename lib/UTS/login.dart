@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _showPassword = true;
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +83,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Container(
-              
+              width: 400,
               child: SizedBox(
                 
                 height: 30,
@@ -101,7 +108,7 @@ class LoginPage extends StatelessWidget {
                 )
               ),
               SizedBox(
-              
+              width: 400,
               height: 30,
               child: Row(
                 children: [
@@ -113,12 +120,24 @@ class LoginPage extends StatelessWidget {
                 width: 400,
                 child: Container(
                   child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    controller: ,
+                    obscureText: _showPassword,
+                    decoration: InputDecoration(
+                      labelText: 'Min. 8 characters',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          (() {
+                            _showPassword = !_showPassword;
+                          });
+                        },
+                        icon: Icon(_showPassword
+                      ? Icons.remove_red_eye : Icons.visibility_off_outlined
+                      )
+                      ),
                     ),
-                  ),
                 ),
                 )
               ),
