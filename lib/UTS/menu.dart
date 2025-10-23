@@ -6,9 +6,27 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: 50,
-        height: 50,
+      body: Row(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("gambar/Logo.png"))
+            ),
+          ),
+          SizedBox(width: 10,),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Text("LKS MART", style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
+              color: Colors.blueAccent
+            ),),
+          )
+        ],
+
+        
       ),
     );
   }
