@@ -6,28 +6,45 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
+      body: Center(
         child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               width: 200,
               height: 200,
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("gambar/Logo.png")),
+                image: DecorationImage(
+                  image: AssetImage('gambar/Logo.png'),
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
-            Container(
-              child: Text("LKS", style: TextStyle(
-                fontSize: 46
-              ),),
+            SizedBox(width: 16),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  'LKS',
+                  style: TextStyle(
+                    fontSize: 46,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue
+                  ),
+                ),
+                Text(
+                  'MART',
+                  style: TextStyle(
+                    fontSize: 46,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue
+                  ),
+                ),
+              ],
             ),
-            Container(
-              child: Text("MART", style: TextStyle(
-                fontSize: 46
-              ),),
-            )
           ],
         ),
       ),
