@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,6 +9,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _isCheked = false;
   bool _showPassword = true;
   final TextEditingController _passwordController = TextEditingController();
   @override
@@ -69,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       'Sign In',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -89,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
                 child: Row(
                   children: [
-                    Text("Email: "),
+                    Text("Email "),
                   ],
                 )
               ),
@@ -112,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 30,
               child: Row(
                 children: [
-                  Text("Password: "),
+                  Text("Password *"),
                 ],
               )
             ),
@@ -120,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: 400,
                 child: Container(
                   child: TextField(
-                    controller: ,
+                    controller: _passwordController,
                     obscureText: _showPassword,
                     decoration: InputDecoration(
                       labelText: 'Min. 8 characters',
@@ -129,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       suffixIcon: IconButton(
                         onPressed: () {
-                          (() {
+                          setState(() {
                             _showPassword = !_showPassword;
                           });
                         },
@@ -141,10 +143,25 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 )
               ),
+              SizedBox(height: 20),
+              Container(
+                width:400,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Login'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    textStyle: TextStyle(fontSize: 16, ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
-
       ),
     );
   }
