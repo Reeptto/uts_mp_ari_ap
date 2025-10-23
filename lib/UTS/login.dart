@@ -9,7 +9,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _isCheked = false;
   bool _showPassword = true;
   final TextEditingController _passwordController = TextEditingController();
   @override
@@ -152,11 +151,27 @@ class _LoginPageState extends State<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     padding: EdgeInsets.symmetric(vertical: 15),
-                    textStyle: TextStyle(fontSize: 16, ),
+                    textStyle: TextStyle(
+                      fontSize: 18, 
+                      color: Colors.white
+                      ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Belum punya akun ?"),
+                    TextButton(onPressed: 
+                    () {}, child: Text("Daftar Disini!", style: TextStyle(
+                      color: Colors.blue
+                    ),))
+                  ],
                 ),
               )
             ],
