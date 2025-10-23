@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:uts_ari_aprianto/UTS/daftar.dart';
+import 'package:uts_ari_aprianto/UTS/menu.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -147,7 +148,11 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 width:400,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return MenuPage();
+                    }));
+                  },
                   child: Text('Login'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
